@@ -3,4 +3,29 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // var ReactDOM = require('react-dom');
 
-ReactDOM.render(<p>Resfreshing all the time</p>, document.getElementById('root'));
+var dummyData = ['Learn Quantopian', 'Review React', 'Read \'The Crowd\'', 'Buy Plane Ticket', 'Send Dad My Emergency Contact']
+
+
+class TodoList extends React.Component {
+  render() {
+    return (
+      <ul>
+        {dummyData.map(todo => <Todo task={todo}/>)}
+      </ul>
+    )
+  }
+}
+
+class Todo extends React.Component {
+  render() {
+    return (
+      <li>
+        <button>
+          X
+        </button>
+        {this.props.task}
+      </li>
+    )
+  }
+}
+ReactDOM.render(<TodoList />, document.getElementById('root'));
