@@ -3,16 +3,24 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // var ReactDOM = require('react-dom');
 
-var dummyData = ['Learn Quantopian', 'Review React', 'Read \'The Crowd\'', 'Buy Plane Ticket', 'Send Dad My Emergency Contact'];
+var dummyData = [
+  { taskText: "Learn Quantopian", completed: false },
+  { taskText: "Review React", completed: false },
+  { taskText: "Read \'The Crowd\'", completed: false },
+  { taskText: "Buy Plane Ticket", completed: false },
+  { taskText: "Deploy Fridg!t to Heroku", completed: true },
+  { taskText: "Send Dad My Emergency Contact", completed: false }
+];
 
 class Todo extends React.Component {
   render() {
+    let styledText = (this.props.task.completed) ? <strike>{this.props.task.taskText}</strike>: this.props.task.taskText;
     return (
       <li>
         <button>
           X
         </button>
-        {this.props.task}
+        {styledText}
       </li>
     )
   }
