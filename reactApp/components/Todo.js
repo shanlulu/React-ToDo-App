@@ -5,7 +5,7 @@ class Todo extends React.Component {
     let styledText = (this.props.task.completed) ? <strike>{this.props.task.taskText}</strike>: this.props.task.taskText;
     return (
       <li>
-        <button>
+        <button onClick={() => this.props.xClick()}>
           X
         </button>
         {styledText}
