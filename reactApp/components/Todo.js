@@ -2,7 +2,7 @@ import React from 'react';
 
 class Todo extends React.Component {
   render() {
-    let styledText = (this.props.task.completed) ? <strike>{this.props.task.taskText}</strike>: this.props.task.taskText;
+    let styledText = (this.props.task.completed) ? <strike>{this.props.task.task}</strike>: this.props.task.task;
     return (
       <li>
         <button onClick={() => this.props.xClick()}>
