@@ -8,7 +8,7 @@ class Todo extends React.Component {
         <button onClick={() => this.props.xClick()}>
           X
         </button>
-        {styledText}
+        <span onClick={() => this.props.toggleClick()}>{styledText}</span>
       </li>
     )
   }
