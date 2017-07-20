@@ -4,11 +4,9 @@ class Todo extends React.Component {
   render() {
     let styledText = (this.props.task.completed) ? <strike>{this.props.task.task}</strike>: this.props.task.task;
     return (
-      <li>
-        <button onClick={() => this.props.xClick()}>
-          X
-        </button>
-        <span onClick={() => this.props.toggleClick()}>{styledText}</span>
+      <li className="ui-state-default">
+          <button onClick={() => this.props.xClick()} className="btn btn-primary">X</button>
+          <label onClick={() => this.props.toggleClick()}>{styledText}</label>
       </li>
     )
   }

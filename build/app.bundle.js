@@ -10566,15 +10566,33 @@ var TodoApp = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        null,
-        _react2.default.createElement(_InputLine2.default, { submit: function submit(task) {
-            return _this6.addTodo(task);
-          } }),
-        _react2.default.createElement(_TodoList2.default, { todos: this.state.todos, todoToggleClick: function todoToggleClick(i) {
-            return _this6.toggleTodo(i);
-          }, todoXClick: function todoXClick(index) {
-            return _this6.removeTodo(index);
-          } })
+        { className: 'container' },
+        _react2.default.createElement(
+          'div',
+          { className: 'row' },
+          _react2.default.createElement(
+            'div',
+            { className: 'col-md-6 col-md-offset-3' },
+            _react2.default.createElement(
+              'div',
+              { className: 'todolist' },
+              _react2.default.createElement(
+                'h1',
+                null,
+                'Todos'
+              ),
+              _react2.default.createElement(_InputLine2.default, { submit: function submit(task) {
+                  return _this6.addTodo(task);
+                } }),
+              _react2.default.createElement('hr', null),
+              _react2.default.createElement(_TodoList2.default, { todos: this.state.todos, todoToggleClick: function todoToggleClick(i) {
+                  return _this6.toggleTodo(i);
+                }, todoXClick: function todoXClick(index) {
+                  return _this6.removeTodo(index);
+                } })
+            )
+          )
+        )
       );
     }
   }]);
@@ -11525,16 +11543,16 @@ var InputLine = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        null,
-        _react2.default.createElement('input', { type: 'text', placeholder: 'task', value: this.state.typedText, onChange: function onChange(e) {
+        { className: 'form-group' },
+        _react2.default.createElement('input', { type: 'text', className: 'form-control add-todo', placeholder: 'task', value: this.state.typedText, onChange: function onChange(e) {
             return _this2.handleTyping(e);
           } }),
         _react2.default.createElement(
           'button',
-          { onClick: function onClick(e) {
+          { id: 'addTodo', className: 'btn btn-success', onClick: function onClick(e) {
               _this2.handleSubmit(e);
             } },
-          'Add todo'
+          'Add Todo'
         )
       );
     }
@@ -11580,27 +11598,27 @@ var Todo = function (_React$Component) {
   }
 
   _createClass(Todo, [{
-    key: 'render',
+    key: "render",
     value: function render() {
       var _this2 = this;
 
       var styledText = this.props.task.completed ? _react2.default.createElement(
-        'strike',
+        "strike",
         null,
         this.props.task.task
       ) : this.props.task.task;
       return _react2.default.createElement(
-        'li',
-        null,
+        "li",
+        { className: "ui-state-default" },
         _react2.default.createElement(
-          'button',
+          "button",
           { onClick: function onClick() {
               return _this2.props.xClick();
-            } },
-          'X'
+            }, className: "btn btn-primary" },
+          "X"
         ),
         _react2.default.createElement(
-          'span',
+          "label",
           { onClick: function onClick() {
               return _this2.props.toggleClick();
             } },

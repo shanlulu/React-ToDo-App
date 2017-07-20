@@ -83,9 +83,17 @@ class TodoApp extends React.Component {
 
   render() {
     return (
-      <div>
-        <InputLine submit={(task) => this.addTodo(task)}/>
-        <TodoList todos={this.state.todos} todoToggleClick={(i) => this.toggleTodo(i)} todoXClick={(index) => this.removeTodo(index)}/>
+      <div className="container">
+        <div className="row">
+          <div className="col-md-6 col-md-offset-3">
+            <div className="todolist">
+              <h1>Todos</h1>
+              <InputLine submit={(task) => this.addTodo(task)} />
+              <hr />
+              <TodoList todos={this.state.todos} todoToggleClick={(i) => this.toggleTodo(i)} todoXClick={(index) => this.removeTodo(index)} />
+            </div>
+          </div>
+        </div>
       </div>
     );
   };
